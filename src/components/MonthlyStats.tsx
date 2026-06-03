@@ -8,10 +8,6 @@ interface MonthlyStatsProps {
   month: number
 }
 
-const SEPARATOR = (
-  <div className="border-r border-gray-200 last:hidden" />
-)
-
 function MonthlyStats({ bills, year, month }: MonthlyStatsProps) {
   const { pending, paid, dailyAvg } = useMemo(() => {
     const yearMonth = `${year}-${String(month).padStart(2, '0')}`
@@ -39,14 +35,14 @@ function MonthlyStats({ bills, year, month }: MonthlyStatsProps) {
             ¥{pending.toFixed(2)}
           </p>
         </div>
-        {SEPARATOR}
+        <div className="border-r border-gray-200" />
         <div className="flex-1">
           <p className="text-xs text-gray-400">已还总额</p>
           <p className="text-2xl font-bold text-green-600">
             ¥{paid.toFixed(2)}
           </p>
         </div>
-        {SEPARATOR}
+        <div className="border-r border-gray-200" />
         <div className="flex-1">
           <p className="text-xs text-gray-400">日均待还</p>
           <p className="text-2xl font-bold text-gray-600">

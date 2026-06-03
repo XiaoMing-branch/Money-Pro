@@ -18,7 +18,7 @@ interface BillItem {
 
 function DayCell({ date, isCurrentMonth, bills, onDateClick }: DayCellProps) {
   const dayBills = getBillsForDate(bills, date)
-  const dayNumber = date.split('-')[2]
+  const dayNumber = date.split('-')[2] ?? ''
 
   // Build display items for each bill due on this date
   const billItems: BillItem[] = []

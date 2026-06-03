@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react'
-import type React from 'react'
+import { useState, useEffect, type FormEvent } from 'react'
 import type { Bill, BillFormData } from '../types/bill'
 import { isOneTime, isRecurring } from '../types/bill'
 
@@ -10,7 +9,7 @@ interface BillFormProps {
   editBill?: Bill | null
 }
 
-const BillForm: React.FC<BillFormProps> = ({ open, onClose, onSubmit, editBill }) => {
+function BillForm({ open, onClose, onSubmit, editBill }: BillFormProps) {
   const isEditing = editBill != null
 
   const [billType, setBillType] = useState<'one-time' | 'recurring'>('one-time')
@@ -72,7 +71,7 @@ const BillForm: React.FC<BillFormProps> = ({ open, onClose, onSubmit, editBill }
     }
   }, [open, editBill])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault()
     setError('')
 

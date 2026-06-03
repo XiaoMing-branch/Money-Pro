@@ -1,4 +1,3 @@
-import type React from 'react'
 import type { Bill, OneTimeBill, RecurringBill } from '../types/bill'
 import { isOneTime, isRecurring } from '../types/bill'
 
@@ -34,7 +33,7 @@ function sortRecurring(list: RecurringBill[]): RecurringBill[] {
   })
 }
 
-const BillList: React.FC<BillListProps> = ({ bills, onEdit, onDelete, onTogglePaid }) => {
+function BillList({ bills, onEdit, onDelete, onTogglePaid }: BillListProps) {
   const oneTimeBills = bills.filter(isOneTime)
   const recurringBills = bills.filter(isRecurring)
 
