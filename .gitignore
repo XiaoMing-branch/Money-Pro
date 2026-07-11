@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Excel 临时文件
+~$*.xlsx
+*.xlsx~
+*.xlsm
+
+# 原始账单文件（敏感信息）
+微信支付账单*.xlsx
+支付宝交易明细*.csv
+
+# 系统文件
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 日志
+*.log
+
+# 工具缓存
+.codegraph/
+.omo/
+.mimocode/node_modules/
+.mimocode/package.json
+.mimocode/package-lock.json
+.mimocode/bun.lock
+.mimocode/.cron-lock
